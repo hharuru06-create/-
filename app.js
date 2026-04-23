@@ -137,6 +137,9 @@ function renderList() {
 
   let data = JSON.parse(localStorage.getItem("salaryData") || "[]");
 
+  data.sort((a, b) => new Date(a.date) - new Date(b.date));
+  
+  
   let monthTotal = 0;
   const monthStr = `${currentYear}-${String(currentMonth+1).padStart(2,"0")}`;
 
